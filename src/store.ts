@@ -1,4 +1,4 @@
-import { configureStore} from "@reduxjs/toolkit";
+import { configureStore } from "@reduxjs/toolkit";
 import { numberReducer } from "./reducer/number.reducer";
 
 export const store = configureStore({
