@@ -1,38 +1,35 @@
+import { useDispatch, useSelector } from "react-redux";
+import {
+  addCreator,
+  deleteCreator,
+} from "../../reducer/numbers.actions.creator";
+import { AppDispatch, RootState } from "../../store";
+
 export function Key() {
+  const numberArray = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
+  const dispatch = useDispatch<AppDispatch>();
+
+  const addNumber = (number: string) => {
+    dispatch(addCreator(number));
+  };
+
+  const deleteNumber = () => {
+    dispatch(deleteCreator());
+  };
+
   return (
     <>
+      {numberArray.map((number: string) => (
+        <li>
+          <button className="key" onClick={() => addNumber(number)}>
+            {number}
+          </button>
+        </li>
+      ))}
       <li>
-        <button className="key">1</button>
-      </li>
-      <li>
-        <button className="key">2</button>
-      </li>
-      <li>
-        <button className="key">3</button>
-      </li>
-      <li>
-        <button className="key">4</button>
-      </li>
-      <li>
-        <button className="key">5</button>
-      </li>
-      <li>
-        <button className="key">6</button>
-      </li>
-      <li>
-        <button className="key">7</button>
-      </li>
-      <li>
-        <button className="key">8</button>
-      </li>
-      <li>
-        <button className="key">9</button>
-      </li>
-      <li>
-        <button className="key">0</button>
-      </li>
-      <li>
-        <button className="key big">delete</button>
+        <button className="key big" onClick={() => deleteNumber()}>
+          delete
+        </button>
       </li>
     </>
   );
