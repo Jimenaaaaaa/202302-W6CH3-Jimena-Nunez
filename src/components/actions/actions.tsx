@@ -4,12 +4,8 @@ export function Actions() {
   return (
     <div className="actions">
       <Display></Display>
-      <a href="#" className="call">
-        Call
-      </a>
-      <a href="#" className="hang active">
-        Hang
-      </a>
+      <button className="call">Call</button>
+      <button className="hang active">Hang</button>
     </div>
   );
 }

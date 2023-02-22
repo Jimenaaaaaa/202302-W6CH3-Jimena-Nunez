@@ -75,7 +75,8 @@ li {
   flex-direction: column;
   align-items: center;
 }
-.actions a {
+.actions .call,
+.hang {
   border-radius: 10px;
   padding: 20px;
   text-decoration: none;
@@ -89,7 +90,11 @@ li {
   cursor: pointer;
   opacity: 1;
 }
-.actions a.active:hover {
+.actions .call.active:hover {
+  transform: scale(1);
+}
+
+.actions .hang.active:hover {
   transform: scale(1);
 }
 .actions .call {
